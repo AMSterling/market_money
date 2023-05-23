@@ -41,6 +41,8 @@ gem 'multi_json'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry'
   gem 'rspec-rails'
 end
@@ -51,8 +53,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end
