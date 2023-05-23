@@ -7,5 +7,6 @@ class MarketSerializer
              :state,
              :zip,
              :lat,
-             :lon
+             :lon,
+             :vendor_count
 end
