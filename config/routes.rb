@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :markets, only: %i[index show] do
         get '/vendors', to: 'market_vendors#index'
       end
-      resources :vendors, only: %i[index show] do
+      resources :vendors, only: %i[index show create update destroy] do
 
       end
     end

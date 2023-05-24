@@ -22,7 +22,8 @@ RSpec.describe Market, type: :model do
     let!(:m1_vendors) { create_list(:market_vendor, 2, market: markets[0]) }
     let!(:m2_vendors) { create_list(:market_vendor, 2, market: markets[1]) }
     let!(:m3_vendors) { create_list(:market_vendor, 3, market: markets[2]) }
-    let!(vendor1) { m1_vendors[0].vendor }
+    let!(:vendor1) { m1_vendors[0].vendor }
+    
     describe '.vendor_count' do
       it 'returns number of vendors accociated with a market' do
 
