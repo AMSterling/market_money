@@ -16,7 +16,7 @@ class Api::V0::VendorsController < ApplicationController
     if vendor.save
       render json: VendorSerializer.new(vendor), status: :created
     else
-      render json: { data: {}, errors: 'error' }, status: :bad_request
+      render json: { data: {}, errors: 'Parameters Missing or Invalid' }, status: :bad_request
     end
   end
 
