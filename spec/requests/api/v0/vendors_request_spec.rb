@@ -131,6 +131,43 @@ RSpec.describe 'Vendor API endpoints' do
 
       expect(response).to have_http_status(400)
       expect(response.message).to eq('Bad Request')
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to eq({:data=>{}, :errors=>"Parameters Missing or Invalid"})
+    end
+
+    it 'updates an existing vendor' do
+      id = create(:vendor).id
+      previous_name = Vendor.last.name
+      vendor_params = { name: Faker::Commerce.product_name }
+
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      patch "/api/v0/vendors/#{id}", headers: headers, params: JSON.generate(vendor: vendor_params)
+      vendor = Vendor.find_by(id: id)
+
+      expect(response).to be_successful
+      expect(vendor.name).to_not eq(previous_name)
+      expect(vendor_params[:name]).to eq(vendor.name)
+    end
+
+    it 'responds with 400 if vendor cannot be updated' do
+      id = create(:vendor).id
+      Vendor.last.name
+
+      vendor_params = { name: '' }
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      patch "/api/v0/vendors/#{id}", headers: headers, params: JSON.generate(vendor: vendor_params)
+      Vendor.find_by(id: id)
+
+      expect(response).to have_http_status(400)
+      expect(response.message).to eq('Bad Request')
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to eq({:data=>{}, :errors=>"Parameters Missing or Invalid"})
     end
   end
 end

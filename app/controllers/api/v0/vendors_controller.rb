@@ -21,7 +21,11 @@ class Api::V0::VendorsController < ApplicationController
   end
 
   def update
-
+    if set_vendor.update(vendor_params)
+      render json: VendorSerializer.new(set_vendor)
+    else
+      render json: { data: {}, errors: 'Parameters Missing or Invalid' }, status: :bad_request
+    end
   end
 
   def destroy
