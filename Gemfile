@@ -45,6 +45,8 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
 end
 
 group :development do
@@ -53,6 +55,5 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers'
-  gem 'simplecov', require: false
+  
 end

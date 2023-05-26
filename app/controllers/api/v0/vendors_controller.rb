@@ -1,5 +1,6 @@
 class Api::V0::VendorsController < ApplicationController
   include Validator
+  include ParamHandler
   before_action :set_vendor, only: %i[show]
 
   def index
@@ -30,17 +31,5 @@ class Api::V0::VendorsController < ApplicationController
 
   def destroy
     set_vendor.destroy
-  end
-
-  private
-
-  def vendor_params
-    params.require(:vendor).permit(
-      :name,
-      :description,
-      :contact_name,
-      :contact_phone,
-      :credit_accepted
-    )
   end
 end

@@ -11,6 +11,7 @@ RSpec.describe 'Vendor API endpoints' do
   let!(:vendor4) { m3_vendors[0].vendor }
   let!(:vendor5) { m3_vendors[1].vendor }
   let!(:vendor6) { m3_vendors[2].vendor }
+  let!(:vendor7) { create(:vendor) }
 
   describe 'vendor CRUD' do
     it 'fetches all vendors' do
@@ -22,10 +23,10 @@ RSpec.describe 'Vendor API endpoints' do
       response_body = JSON.parse(response.body, symbolize_names: true)
       vendors = response_body[:data]
 
-      expect(vendors.count).to eq(6)
+      expect(vendors.count).to eq(7)
 
       expect(vendors).to be_an Array
-      expect(vendors.count).to eq(6)
+      expect(vendors.count).to eq(7)
 
       vendors.each do |vendor|
         expect(vendor).to have_key(:id)
@@ -90,6 +91,106 @@ RSpec.describe 'Vendor API endpoints' do
       expect(response_body).to eq({:errors=>[{:detail=>"Couldn't find Vendor with 'id'=123123123123"}]})
     end
 
+    it 'fetches markets accociated with a vendor' do
+
+      get "/api/v0/vendors/#{vendor1.id}/markets"
+
+      expect(response).to be_successful
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      markets = response_body[:data]
+
+      expect(markets).to be_an Array
+      markets.each do |market|
+        expect(market).to have_key(:id)
+        expect(market[:id]).to be_a(String)
+        expect(market).to have_key(:type)
+        expect(market[:type]).to eq('market')
+
+        expect(market).to have_key(:attributes)
+        expect(market[:attributes]).to have_key(:name)
+        expect(market[:attributes][:name]).to be_a(String)
+        expect(market[:attributes]).to have_key(:street)
+        expect(market[:attributes][:street]).to be_a(String)
+        expect(market[:attributes]).to have_key(:city)
+        expect(market[:attributes][:city]).to be_a(String)
+        expect(market[:attributes]).to have_key(:county)
+        expect(market[:attributes][:county]).to be_a(String)
+        expect(market[:attributes]).to have_key(:state)
+        expect(market[:attributes][:state]).to be_a(String)
+        expect(market[:attributes]).to have_key(:zip)
+        expect(market[:attributes][:zip]).to be_a(String)
+        expect(market[:attributes]).to have_key(:lat)
+        expect(market[:attributes][:lat]).to be_a(String)
+        expect(market[:attributes]).to have_key(:lon)
+        expect(market[:attributes][:lon]).to be_a(String)
+        expect(market[:attributes]).to have_key(:vendor_count)
+        expect(market[:attributes][:vendor_count]).to be_an(Integer)
+        expect(market[:attributes]).to_not have_key(:created_at)
+      end
+    end
+
+    it 'responds with 404 if no markets accociated with a vendor' do
+
+      get "/api/v0/vendors/#{vendor7.id}/markets"
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(404)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to eq({:data=>[], :errors=>"No Markets Associated with Vendor #{vendor7.id}"})
+    end
+
+    it 'fetches one market accociated with a vendor' do
+
+      get "/api/v0/vendors/#{vendor1.id}/markets/#{markets[0].id}"
+
+      expect(response).to be_successful
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      market = response_body[:data]
+
+      expect(market).to have_key(:id)
+      expect(market[:id]).to be_a(String)
+      expect(market[:id]).to eq(markets[0].id.to_s)
+      expect(market).to have_key(:type)
+      expect(market[:type]).to eq('market')
+
+      expect(market).to have_key(:attributes)
+      expect(market[:attributes]).to have_key(:name)
+      expect(market[:attributes][:name]).to eq(markets[0].name)
+      expect(market[:attributes]).to have_key(:street)
+      expect(market[:attributes][:street]).to eq(markets[0].street)
+      expect(market[:attributes]).to have_key(:city)
+      expect(market[:attributes][:city]).to eq(markets[0].city)
+      expect(market[:attributes]).to have_key(:county)
+      expect(market[:attributes][:county]).to eq(markets[0].county)
+      expect(market[:attributes]).to have_key(:state)
+      expect(market[:attributes][:state]).to eq(markets[0].state)
+      expect(market[:attributes]).to have_key(:zip)
+      expect(market[:attributes][:zip]).to eq(markets[0].zip)
+      expect(market[:attributes]).to have_key(:lat)
+      expect(market[:attributes][:lat]).to eq(markets[0].lat)
+      expect(market[:attributes]).to have_key(:lon)
+      expect(market[:attributes][:lon]).to eq(markets[0].lon)
+      expect(market[:attributes]).to have_key(:vendor_count)
+      expect(market[:attributes][:vendor_count]).to be_an(Integer)
+      expect(market[:attributes]).to_not have_key(:created_at)
+    end
+
+    it 'responds with 404 if market is not associated with vendor' do
+
+      get "/api/v0/vendors/#{vendor7.id}/markets/#{markets[0].id}"
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(404)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to eq({:errors=>[{:detail=>"Couldn't find Market with 'id'=#{markets[0].id} [WHERE \"market_vendors\".\"vendor_id\" = $1]"}]})
+    end
+
     it 'creates and then deletes a vendor' do
       vendor_params = {
         name: Faker::Company.name,
@@ -101,11 +202,11 @@ RSpec.describe 'Vendor API endpoints' do
 
       headers = { 'CONTENT_TYPE' => 'application/json' }
 
-      post "/api/v0/vendors", headers: headers, params: JSON.generate(vendor: vendor_params)
+      post '/api/v0/vendors', headers: headers, params: JSON.generate(vendor: vendor_params)
       created_vendor = Vendor.last
 
       expect(response).to have_http_status(201)
-      expect(Vendor.count).to eq(7)
+      expect(Vendor.count).to eq(8)
       expect(created_vendor.name).to eq(vendor_params[:name])
       expect(created_vendor.description).to eq(vendor_params[:description])
       expect(created_vendor.contact_name).to eq(vendor_params[:contact_name])
@@ -115,7 +216,7 @@ RSpec.describe 'Vendor API endpoints' do
       delete "/api/v0/vendors/#{created_vendor.id}"
 
       expect(response).to have_http_status(204)
-      expect(Vendor.count).to eq(6)
+      expect(Vendor.count).to eq(7)
       expect { Vendor.find(created_vendor.id) }.to raise_error(ActiveRecord::RecordNotFound)
     end
 
