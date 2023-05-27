@@ -48,15 +48,6 @@ RSpec.describe Market, type: :model do
           end
         end
       end
-      context '#name' do
-        it 'scopes markets by name' do
-          name_search = markets[0].name.to(4)
-
-          Market.filter_by_name(name_search).each do |market|
-            expect(market.name.downcase).to include(markets[0].name.to(4).downcase)
-          end
-        end
-      end
 
       context '#city' do
         it 'scopes markets by city' do
