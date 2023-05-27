@@ -194,4 +194,10 @@ RSpec.describe 'Markets API Endpoints', type: :request do
       expect(response_body).to eq({:errors=>[{:detail=>"Couldn't find Vendor with 'id'=#{vendor7.id} [WHERE \"market_vendors\".\"market_id\" = $1]"}]})
     end
   end
+
+  describe 'market search' do
+    it 'fetches a market by state' do
+      
+    end
+  end
 end
