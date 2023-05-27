@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Vendor API endpoints' do
+RSpec.describe 'Vendor API endpoints', type: :request do
   let!(:markets) { create_list(:market, 3) }
   let!(:m1_vendors) { create_list(:market_vendor, 2, market: markets[0]) }
   let!(:m2_vendors) { create_list(:market_vendor, 1, market: markets[1]) }

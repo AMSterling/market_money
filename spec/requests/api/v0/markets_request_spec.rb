@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Markets API Endpoints' do
+RSpec.describe 'Markets API Endpoints', type: :request do
   let!(:markets) { create_list(:market, 4) }
   let!(:m1_vendors) { create_list(:market_vendor, 2, market: markets[0]) }
   let!(:m2_vendors) { create_list(:market_vendor, 1, market: markets[1]) }
@@ -13,7 +13,7 @@ RSpec.describe 'Markets API Endpoints' do
   let!(:vendor6) { m3_vendors[2].vendor }
   let!(:vendor7) { create(:vendor) }
 
-  describe 'market index and show' do
+  describe 'market CRUD' do
     it 'fetches all markets' do
 
       get '/api/v0/markets'
@@ -103,95 +103,95 @@ RSpec.describe 'Markets API Endpoints' do
 
       expect(response_body).to eq({:errors=>[{:detail=>"Couldn't find Market with 'id'=123123123123"}]})
     end
+  end
 
-    describe 'market vendors' do
-      it 'fetches vendors associated with a market' do
-        id = markets[0].id
+  describe 'market vendors' do
+    it 'fetches vendors associated with a market' do
+      id = markets[0].id
 
-        get "/api/v0/markets/#{id}/vendors"
+      get "/api/v0/markets/#{id}/vendors"
 
-        expect(response).to be_successful
+      expect(response).to be_successful
 
-        response_body = JSON.parse(response.body, symbolize_names: true)
-        vendors = response_body[:data]
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      vendors = response_body[:data]
 
-        expect(vendors).to be_an Array
-        expect(vendors.count).to eq(2)
+      expect(vendors).to be_an Array
+      expect(vendors.count).to eq(2)
 
-        vendors.each do |vendor|
-          expect(vendor).to have_key(:id)
-          expect(vendor[:id]).to be_a(String)
-          expect(vendor).to have_key(:type)
-          expect(vendor[:type]).to eq('vendor')
-
-          expect(vendor).to have_key(:attributes)
-          expect(vendor[:attributes]).to have_key(:name)
-          expect(vendor[:attributes][:name]).to be_a(String)
-          expect(vendor[:attributes]).to have_key(:description)
-          expect(vendor[:attributes][:description]).to be_a(String)
-          expect(vendor[:attributes]).to have_key(:contact_name)
-          expect(vendor[:attributes][:contact_name]).to be_a(String)
-          expect(vendor[:attributes]).to have_key(:contact_phone)
-          expect(vendor[:attributes][:contact_phone]).to be_a(String)
-          expect(vendor[:attributes]).to have_key(:credit_accepted)
-          expect(vendor[:attributes][:credit_accepted]).to be_in([true, false])
-          expect(vendor[:attributes]).to_not have_key(:created_at)
-        end
-      end
-
-      it 'responds with 404 if no vendors accociated with a market' do
-        id = markets[3].id
-
-        get "/api/v0/markets/#{id}/vendors"
-
-        expect(response).to_not be_successful
-        expect(response).to have_http_status(404)
-
-        response_body = JSON.parse(response.body, symbolize_names: true)
-
-        expect(response_body).to eq({:data=>[], :errors=>"No Vendors Associated with Market #{id}"})
-      end
-
-      it 'fetches one vendor accociated with a market' do
-
-        get "/api/v0/markets/#{markets[0].id}/vendors/#{vendor1.id}"
-
-        expect(response).to be_successful
-
-        response_body = JSON.parse(response.body, symbolize_names: true)
-        vendor = response_body[:data]
-
+      vendors.each do |vendor|
         expect(vendor).to have_key(:id)
-        expect(vendor[:id]).to eq(vendor1.id.to_s)
+        expect(vendor[:id]).to be_a(String)
         expect(vendor).to have_key(:type)
         expect(vendor[:type]).to eq('vendor')
 
         expect(vendor).to have_key(:attributes)
         expect(vendor[:attributes]).to have_key(:name)
-        expect(vendor[:attributes][:name]).to eq(vendor1.name)
+        expect(vendor[:attributes][:name]).to be_a(String)
         expect(vendor[:attributes]).to have_key(:description)
-        expect(vendor[:attributes][:description]).to eq(vendor1.description)
+        expect(vendor[:attributes][:description]).to be_a(String)
         expect(vendor[:attributes]).to have_key(:contact_name)
-        expect(vendor[:attributes][:contact_name]).to eq(vendor1.contact_name)
+        expect(vendor[:attributes][:contact_name]).to be_a(String)
         expect(vendor[:attributes]).to have_key(:contact_phone)
-        expect(vendor[:attributes][:contact_phone]).to eq(vendor1.contact_phone)
+        expect(vendor[:attributes][:contact_phone]).to be_a(String)
         expect(vendor[:attributes]).to have_key(:credit_accepted)
         expect(vendor[:attributes][:credit_accepted]).to be_in([true, false])
-        expect(vendor[:attributes][:credit_accepted]).to eq(vendor1.credit_accepted)
         expect(vendor[:attributes]).to_not have_key(:created_at)
       end
+    end
 
-      it 'responds with 404 if vendor is not associated with market' do
+    it 'responds with 404 if no vendors accociated with a market' do
+      id = markets[3].id
 
-        get "/api/v0/markets/#{markets[0].id}/vendors/#{vendor7.id}"
+      get "/api/v0/markets/#{id}/vendors"
 
-        expect(response).to_not be_successful
-        expect(response).to have_http_status(404)
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(404)
 
-        response_body = JSON.parse(response.body, symbolize_names: true)
+      response_body = JSON.parse(response.body, symbolize_names: true)
 
-        expect(response_body).to eq({:errors=>[{:detail=>"Couldn't find Vendor with 'id'=#{vendor7.id} [WHERE \"market_vendors\".\"market_id\" = $1]"}]})
-      end
+      expect(response_body).to eq({:data=>[], :errors=>"No Vendors Associated with Market #{id}"})
+    end
+
+    it 'fetches one vendor accociated with a market' do
+
+      get "/api/v0/markets/#{markets[0].id}/vendors/#{vendor1.id}"
+
+      expect(response).to be_successful
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      vendor = response_body[:data]
+
+      expect(vendor).to have_key(:id)
+      expect(vendor[:id]).to eq(vendor1.id.to_s)
+      expect(vendor).to have_key(:type)
+      expect(vendor[:type]).to eq('vendor')
+
+      expect(vendor).to have_key(:attributes)
+      expect(vendor[:attributes]).to have_key(:name)
+      expect(vendor[:attributes][:name]).to eq(vendor1.name)
+      expect(vendor[:attributes]).to have_key(:description)
+      expect(vendor[:attributes][:description]).to eq(vendor1.description)
+      expect(vendor[:attributes]).to have_key(:contact_name)
+      expect(vendor[:attributes][:contact_name]).to eq(vendor1.contact_name)
+      expect(vendor[:attributes]).to have_key(:contact_phone)
+      expect(vendor[:attributes][:contact_phone]).to eq(vendor1.contact_phone)
+      expect(vendor[:attributes]).to have_key(:credit_accepted)
+      expect(vendor[:attributes][:credit_accepted]).to be_in([true, false])
+      expect(vendor[:attributes][:credit_accepted]).to eq(vendor1.credit_accepted)
+      expect(vendor[:attributes]).to_not have_key(:created_at)
+    end
+
+    it 'responds with 404 if vendor is not associated with market' do
+
+      get "/api/v0/markets/#{markets[0].id}/vendors/#{vendor7.id}"
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(404)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to eq({:errors=>[{:detail=>"Couldn't find Vendor with 'id'=#{vendor7.id} [WHERE \"market_vendors\".\"market_id\" = $1]"}]})
     end
   end
 end
