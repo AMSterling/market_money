@@ -1,6 +1,14 @@
 module ParamHandler
   extend ActiveSupport::Concern
 
+  def market_params
+    params.require(:market).permit(
+      :name,
+      :city,
+      :state
+    )
+  end
+
   def vendor_params
     params.require(:vendor).permit(
       :name,

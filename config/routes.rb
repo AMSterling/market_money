@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v0 do
       post '/market_vendors', to: 'market_vendors#create'
       delete '/market_vendors', to: 'market_vendors#destroy'
+      get 'markets/search', to: 'markets#index'
 
       resources :markets, only: %i[index show] do
         get '/vendors', to: 'markets/vendors#index'
@@ -16,3 +17,5 @@ Rails.application.routes.draw do
     end
   end
 end
+
+# get 'markets/search', to: 'markets/search#index'

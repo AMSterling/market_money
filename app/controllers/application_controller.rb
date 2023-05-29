@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  include ActionController::Helpers
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   # rescue_from ActionController::ParameterMissing, with: :handle_parameter_missing
   # rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response

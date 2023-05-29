@@ -196,8 +196,100 @@ RSpec.describe 'Markets API Endpoints', type: :request do
   end
 
   describe 'market search' do
-    it 'fetches a market by state' do
-      
+    let!(:market1) { markets[0] }
+
+    context 'when valid parameters' do
+      it 'fetches markets by name' do
+
+        get "/api/v0/markets/search?name=#{market1.name.to(3)}"
+
+        expect(response).to be_successful
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        markets = response_body[:data]
+
+        markets.each do |market|
+          expect(market[:attributes][:name].downcase).to include(market1.name.to(3).downcase)
+        end
+      end
+
+      it 'fetches markets by state' do
+
+        get "/api/v0/markets/search?state=#{market1.state.to(3)}"
+
+        expect(response).to be_successful
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        markets = response_body[:data]
+
+        markets.each do |market|
+          expect(market[:attributes][:state].downcase).to include(market1.state.to(3).downcase)
+        end
+      end
+
+      it 'fetches markets by name and state' do
+
+        get "/api/v0/markets/search?name=#{market1.name.to(3)}&state=#{market1.state.to(3)}"
+
+        expect(response).to be_successful
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        markets = response_body[:data]
+
+        markets.each do |market|
+          expect(market[:attributes][:name].downcase).to include(market1.name.to(3).downcase)
+          expect(market[:attributes][:state].downcase).to include(market1.state.to(3).downcase)
+        end
+      end
+
+      it 'fetches markets by city and state' do
+
+        get "/api/v0/markets/search?city=#{market1.city.to(3)}&state=#{market1.state.to(3)}"
+
+        expect(response).to be_successful
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        markets = response_body[:data]
+
+        markets.each do |market|
+          expect(market[:attributes][:city].downcase).to include(market1.city.to(3).downcase)
+          expect(market[:attributes][:state].downcase).to include(market1.state.to(3).downcase)
+        end
+      end
+
+      it 'fetches markets by name, city and state' do
+
+        get "/api/v0/markets/search?name=#{market1.name.to(3)}&city=#{market1.city.to(3)}&state=#{market1.state.to(3)}"
+
+        expect(response).to be_successful
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        markets = response_body[:data]
+
+        markets.each do |market|
+          expect(market[:attributes][:name].downcase).to include(market1.name.to(3).downcase)
+          expect(market[:attributes][:city].downcase).to include(market1.city.to(3).downcase)
+          expect(market[:attributes][:state].downcase).to include(market1.state.to(3).downcase)
+        end
+      end
+    end
+
+    context 'when invalid params' do
+      it 'responds with 422 if only city' do
+
+        get "/api/v0/markets/search?city=#{market1.city.to(3)}"
+
+        expect(response).to_not be_successful
+        expect(response).to have_http_status 422
+      end
+
+      it 'responds with 422 if name and city' do
+
+        get "/api/v0/markets/search?name=#{market1.name.to(3)}&city=#{market1.city.to(3)}"
+
+        expect(response).to_not be_successful
+        expect(response).to have_http_status 422
+      end
     end
   end
 end
