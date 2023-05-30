@@ -21,7 +21,7 @@ class Api::V0::MarketsController < ApplicationController
 
   def param_check
     render status: :unprocessable_entity if (params[:city] && !params[:state]) ||
-    filter_params.all? { |k, v| v.nil? }
+    filter_params.values.all?(&:nil?)
   end
 
   def filter_params
