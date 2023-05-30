@@ -100,6 +100,14 @@ RSpec.describe Market, type: :model do
           end
         end
       end
+
+      context 'invalid filters' do
+        it 'cannot scope undefined values' do
+          zip_search = markets[0].zip
+
+          expect{Market.filter_by(zip: zip_search)}.to raise_error(TypeError)
+        end
+      end
     end
   end
 end

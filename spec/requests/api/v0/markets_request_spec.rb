@@ -272,6 +272,34 @@ RSpec.describe 'Markets API Endpoints', type: :request do
           expect(market[:attributes][:state].downcase).to include(market1.state.to(3).downcase)
         end
       end
+
+      it 'ignores blank values' do
+
+        get "/api/v0/markets/search?name=&city=#{market1.city.to(3)}&state=#{market1.state.to(3)}"
+
+        expect(response).to be_successful
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        markets = response_body[:data]
+
+        markets.each do |market|
+          expect(market[:attributes][:city].downcase).to include(market1.city.to(3).downcase)
+          expect(market[:attributes][:state].downcase).to include(market1.state.to(3).downcase)
+        end
+      end
+
+      it 'responds with empty data if wrong param value' do
+        name = 123123123123
+
+        get "/api/v0/markets/search?name=#{name}"
+
+        expect(response).to be_successful
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response_body).to eq({:data=>[]})
+      end
+
     end
 
     context 'when invalid params' do
@@ -286,6 +314,22 @@ RSpec.describe 'Markets API Endpoints', type: :request do
       it 'responds with 422 if name and city' do
 
         get "/api/v0/markets/search?name=#{market1.name.to(3)}&city=#{market1.city.to(3)}"
+
+        expect(response).to_not be_successful
+        expect(response).to have_http_status 422
+      end
+
+      it 'responds with 422 if wrong param type for market' do
+
+        get "/api/v0/markets/search?zip=#{market1.zip}"
+
+        expect(response).to_not be_successful
+        expect(response).to have_http_status 422
+      end
+
+      it 'responds with 422 if param not attribute for market' do
+
+        get "/api/v0/markets/search?description=#{market1.name}"
 
         expect(response).to_not be_successful
         expect(response).to have_http_status 422
