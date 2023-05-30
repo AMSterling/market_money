@@ -288,7 +288,7 @@ RSpec.describe 'Markets API Endpoints', type: :request do
         end
       end
 
-      it 'responds with empty data if wrong param value' do
+      it 'responds with empty data if no markets matching params' do
         name = 123123123123
 
         get "/api/v0/markets/search?name=#{name}"
@@ -303,7 +303,7 @@ RSpec.describe 'Markets API Endpoints', type: :request do
     end
 
     context 'when invalid params' do
-      it 'responds with 422 if only city' do
+      it 'responds with 422 if only city param is passed' do
 
         get "/api/v0/markets/search?city=#{market1.city.to(3)}"
 
@@ -319,7 +319,7 @@ RSpec.describe 'Markets API Endpoints', type: :request do
         expect(response).to have_http_status 422
       end
 
-      it 'responds with 422 if wrong param type for market' do
+      it 'responds with 422 if wrong param type passed' do
 
         get "/api/v0/markets/search?zip=#{market1.zip}"
 
