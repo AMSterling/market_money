@@ -336,4 +336,8 @@ RSpec.describe 'Markets API Endpoints', type: :request do
       end
     end
   end
+
+  describe 'nearby cash dispensers' do
+    
+  end
 end
