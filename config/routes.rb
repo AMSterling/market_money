@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :markets, only: %i[index show] do
         get '/vendors', to: 'markets/vendors#index'
         get '/vendors/:vendor_id', to: 'markets/vendors#show'
+        get '/nearest_atms', to: 'markets/atms#index'
       end
 
       resources :vendors, only: %i[index show create update destroy] do

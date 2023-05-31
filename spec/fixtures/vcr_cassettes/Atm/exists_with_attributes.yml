@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tomtom.com/search/2/nearbySearch/.json?categorySet=7397&country=US&key=app_key&lat=33.2896&lon=-87.5251
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 May 2023 01:35:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      Tracking-Id:
+      - 265c3f63-4e6b-48c3-997a-919bbbe3ae86
+      Access-Control-Expose-Headers:
+      - Tracking-ID
+      X-Apigee.target-Latency:
+      - '45'
+      X-Envoy-Upstream-Service-Time:
+      - '57'
+      Server:
+      - tomtom
+      X-Tomtom-Processed-By:
+      - westus2
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"summary":{"queryType":"NEARBY","queryTime":42,"numResults":10,"offset":0,"totalResults":100,"fuzzyLevel":1,"geoBias":{"lat":33.2896,"lon":-87.5251},"geobiasCountry":"US"},"results":[{"type":"POI","id":"njiFKGd5IdBxx3vWLraw1Q","score":106.5920349336,"dist":3098.151712,"info":"search:ta:840017000010677-US","poi":{"name":"Bank
+        of Tuscaloosa","phone":"+1 205-345-6021","categorySet":[{"id":7397}],"url":"www.bankoftuscaloosa.com","categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4901","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2650","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4901 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.26297,"lon":-87.515297},"viewport":{"topLeftPoint":{"lat":33.26387,"lon":-87.51637},"btmRightPoint":{"lat":33.26207,"lon":-87.51422}},"entryPoints":[{"type":"main","position":{"lat":33.26287,"lon":-87.51583}}]},{"type":"POI","id":"eCepk7sdjnXkwSlZTULtig","score":106.5726486417,"dist":3115.772375,"info":"search:ta:840019000842474-US","poi":{"name":"ATM
+        at Retail Location Publix","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4851","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4851 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.263251,"lon":-87.513697},"viewport":{"topLeftPoint":{"lat":33.26508,"lon":-87.51588},"btmRightPoint":{"lat":33.26143,"lon":-87.51151}},"entryPoints":[{"type":"minor","position":{"lat":33.26361,"lon":-87.51369}},{"type":"main","position":{"lat":33.26273,"lon":-87.51579}}]},{"type":"POI","id":"blr02B6phfp9A-vPRvensw","score":106.4736442755,"dist":3205.785041,"info":"search:ta:840019001447585-US","poi":{"name":"Columbus
+        Data Services","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4751","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2649","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4751 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.262043,"lon":-87.514965},"viewport":{"topLeftPoint":{"lat":33.26294,"lon":-87.51604},"btmRightPoint":{"lat":33.26114,"lon":-87.51389}},"entryPoints":[{"type":"main","position":{"lat":33.26193,"lon":-87.51557}}]},{"type":"POI","id":"WP_XPODsTKJDNuD6WI1q9w","score":106.4552063174,"dist":3222.539212,"info":"search:ta:840019000830976-US","poi":{"name":"ATM
+        at Kangaroo Express","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4801","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2648","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4801 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.261895,"lon":-87.514928},"viewport":{"topLeftPoint":{"lat":33.26279,"lon":-87.516},"btmRightPoint":{"lat":33.261,"lon":-87.51385}},"entryPoints":[{"type":"main","position":{"lat":33.26176,"lon":-87.51553}}]},{"type":"POI","id":"O-w3TZZYjGMcCZQaVdJ6ow","score":106.4182213007,"dist":3256.167227,"info":"search:ta:840019001440679-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4814","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2672","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4814 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.26131,"lon":-87.516053},"viewport":{"topLeftPoint":{"lat":33.26221,"lon":-87.51713},"btmRightPoint":{"lat":33.26041,"lon":-87.51498}},"entryPoints":[{"type":"main","position":{"lat":33.26142,"lon":-87.51544}}]},{"type":"POI","id":"f41Ge4wruJqLR-mSm31lgg","score":106.3905433826,"dist":3281.323932,"info":"search:ta:840017000009531-US","poi":{"name":"ATM
+        at North River Branch","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"1805","streetName":"New Watermelon
+        Road","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-4618","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"1805 New Watermelon Road,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.26203,"lon":-87.512515},"viewport":{"topLeftPoint":{"lat":33.26293,"lon":-87.51359},"btmRightPoint":{"lat":33.26113,"lon":-87.51144}},"entryPoints":[{"type":"main","position":{"lat":33.26239,"lon":-87.51278}}]},{"type":"POI","id":"LZqYqAhQeLrWsOg9hnqQag","score":106.3575615093,"dist":3311.308452,"info":"search:ta:840019000234049-US","poi":{"name":"Regions","brands":[{"name":"Regions"}],"categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"1775","streetName":"New Watermelon
+        Road","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-3578","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"1775 New Watermelon Road,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.261563,"lon":-87.513096},"viewport":{"topLeftPoint":{"lat":33.26246,"lon":-87.51417},"btmRightPoint":{"lat":33.26066,"lon":-87.51202}},"entryPoints":[{"type":"main","position":{"lat":33.26205,"lon":-87.51345}}]},{"type":"POI","id":"hpbKMhTve6qB25CFW1wYRg","score":106.3136863863,"dist":3351.199465,"info":"search:ta:840019001445537-US","poi":{"name":"Columbus
+        Data Services","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4715","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2648","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4715 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.260779,"lon":-87.51456},"viewport":{"topLeftPoint":{"lat":33.26168,"lon":-87.51564},"btmRightPoint":{"lat":33.25988,"lon":-87.51348}},"entryPoints":[{"type":"main","position":{"lat":33.26066,"lon":-87.51524}}]},{"type":"POI","id":"N3e6SB1kkCZxIDCKtfrAYQ","score":106.108947002,"dist":3537.322158,"info":"search:ta:840019001454935-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4551","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-3515","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4551 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.259102,"lon":-87.514278},"viewport":{"topLeftPoint":{"lat":33.26,"lon":-87.51535},"btmRightPoint":{"lat":33.2582,"lon":-87.5132}},"entryPoints":[{"type":"main","position":{"lat":33.25899,"lon":-87.51481}}]},{"type":"POI","id":"BQkfn_PzoEEhYdM73GWbRA","score":105.2109001075,"dist":4353.732562,"info":"search:ta:840019001448787-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"1114","streetName":"Mitt Lary Road","municipality":"Northport","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35475","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"1114 Mitt Lary Road, Northport,
+        AL 35475","localName":"Northport"},"position":{"lat":33.30188,"lon":-87.56958},"viewport":{"topLeftPoint":{"lat":33.30278,"lon":-87.57066},"btmRightPoint":{"lat":33.30098,"lon":-87.5685}},"entryPoints":[{"type":"main","position":{"lat":33.30107,"lon":-87.56964}}]}]}'
+  recorded_at: Wed, 31 May 2023 01:35:04 GMT
+recorded_with: VCR 6.1.0

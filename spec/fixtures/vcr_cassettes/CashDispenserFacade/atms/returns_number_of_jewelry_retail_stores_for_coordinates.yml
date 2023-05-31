@@ -1,0 +1,190 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tomtom.com/search/2/nearbySearch/.json?categorySet=7397&country=US&key=app_key&lat=33.2896&lon=-87.5251
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 May 2023 01:12:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      Tracking-Id:
+      - c94a1143-219f-4f05-b795-e05de4ff84ec
+      Access-Control-Expose-Headers:
+      - Tracking-ID
+      X-Apigee.target-Latency:
+      - '53'
+      X-Envoy-Upstream-Service-Time:
+      - '66'
+      Server:
+      - tomtom
+      X-Tomtom-Processed-By:
+      - westus2
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"summary":{"queryType":"NEARBY","queryTime":49,"numResults":10,"offset":0,"totalResults":100,"fuzzyLevel":1,"geoBias":{"lat":33.2896,"lon":-87.5251},"geobiasCountry":"US"},"results":[{"type":"POI","id":"njiFKGd5IdBxx3vWLraw1Q","score":106.5920349336,"dist":3098.151712,"info":"search:ta:840017000010677-US","poi":{"name":"Bank
+        of Tuscaloosa","phone":"+1 205-345-6021","categorySet":[{"id":7397}],"url":"www.bankoftuscaloosa.com","categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4901","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2650","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4901 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.26297,"lon":-87.515297},"viewport":{"topLeftPoint":{"lat":33.26387,"lon":-87.51637},"btmRightPoint":{"lat":33.26207,"lon":-87.51422}},"entryPoints":[{"type":"main","position":{"lat":33.26287,"lon":-87.51583}}]},{"type":"POI","id":"eCepk7sdjnXkwSlZTULtig","score":106.5726486417,"dist":3115.772375,"info":"search:ta:840019000842474-US","poi":{"name":"ATM
+        at Retail Location Publix","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4851","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4851 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.263251,"lon":-87.513697},"viewport":{"topLeftPoint":{"lat":33.26508,"lon":-87.51588},"btmRightPoint":{"lat":33.26143,"lon":-87.51151}},"entryPoints":[{"type":"minor","position":{"lat":33.26361,"lon":-87.51369}},{"type":"main","position":{"lat":33.26273,"lon":-87.51579}}]},{"type":"POI","id":"blr02B6phfp9A-vPRvensw","score":106.4736442755,"dist":3205.785041,"info":"search:ta:840019001447585-US","poi":{"name":"Columbus
+        Data Services","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4751","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2649","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4751 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.262043,"lon":-87.514965},"viewport":{"topLeftPoint":{"lat":33.26294,"lon":-87.51604},"btmRightPoint":{"lat":33.26114,"lon":-87.51389}},"entryPoints":[{"type":"main","position":{"lat":33.26193,"lon":-87.51557}}]},{"type":"POI","id":"WP_XPODsTKJDNuD6WI1q9w","score":106.4552063174,"dist":3222.539212,"info":"search:ta:840019000830976-US","poi":{"name":"ATM
+        at Kangaroo Express","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4801","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2648","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4801 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.261895,"lon":-87.514928},"viewport":{"topLeftPoint":{"lat":33.26279,"lon":-87.516},"btmRightPoint":{"lat":33.261,"lon":-87.51385}},"entryPoints":[{"type":"main","position":{"lat":33.26176,"lon":-87.51553}}]},{"type":"POI","id":"O-w3TZZYjGMcCZQaVdJ6ow","score":106.4182213007,"dist":3256.167227,"info":"search:ta:840019001440679-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4814","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2672","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4814 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.26131,"lon":-87.516053},"viewport":{"topLeftPoint":{"lat":33.26221,"lon":-87.51713},"btmRightPoint":{"lat":33.26041,"lon":-87.51498}},"entryPoints":[{"type":"main","position":{"lat":33.26142,"lon":-87.51544}}]},{"type":"POI","id":"f41Ge4wruJqLR-mSm31lgg","score":106.3905433826,"dist":3281.323932,"info":"search:ta:840017000009531-US","poi":{"name":"ATM
+        at North River Branch","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"1805","streetName":"New Watermelon
+        Road","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-4618","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"1805 New Watermelon Road,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.26203,"lon":-87.512515},"viewport":{"topLeftPoint":{"lat":33.26293,"lon":-87.51359},"btmRightPoint":{"lat":33.26113,"lon":-87.51144}},"entryPoints":[{"type":"main","position":{"lat":33.26239,"lon":-87.51278}}]},{"type":"POI","id":"LZqYqAhQeLrWsOg9hnqQag","score":106.3575615093,"dist":3311.308452,"info":"search:ta:840019000234049-US","poi":{"name":"Regions","brands":[{"name":"Regions"}],"categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"1775","streetName":"New Watermelon
+        Road","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-3578","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"1775 New Watermelon Road,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.261563,"lon":-87.513096},"viewport":{"topLeftPoint":{"lat":33.26246,"lon":-87.51417},"btmRightPoint":{"lat":33.26066,"lon":-87.51202}},"entryPoints":[{"type":"main","position":{"lat":33.26205,"lon":-87.51345}}]},{"type":"POI","id":"hpbKMhTve6qB25CFW1wYRg","score":106.3136863863,"dist":3351.199465,"info":"search:ta:840019001445537-US","poi":{"name":"Columbus
+        Data Services","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4715","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-2648","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4715 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.260779,"lon":-87.51456},"viewport":{"topLeftPoint":{"lat":33.26168,"lon":-87.51564},"btmRightPoint":{"lat":33.25988,"lon":-87.51348}},"entryPoints":[{"type":"main","position":{"lat":33.26066,"lon":-87.51524}}]},{"type":"POI","id":"N3e6SB1kkCZxIDCKtfrAYQ","score":106.108947002,"dist":3537.322158,"info":"search:ta:840019001454935-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"4551","streetName":"Rice Mine Road
+        Northeast","municipality":"Tuscaloosa","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35406","extendedPostalCode":"35406-3515","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"4551 Rice Mine Road Northeast,
+        Tuscaloosa, AL 35406","localName":"Tuscaloosa"},"position":{"lat":33.259102,"lon":-87.514278},"viewport":{"topLeftPoint":{"lat":33.26,"lon":-87.51535},"btmRightPoint":{"lat":33.2582,"lon":-87.5132}},"entryPoints":[{"type":"main","position":{"lat":33.25899,"lon":-87.51481}}]},{"type":"POI","id":"BQkfn_PzoEEhYdM73GWbRA","score":105.2109001075,"dist":4353.732562,"info":"search:ta:840019001448787-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"1114","streetName":"Mitt Lary Road","municipality":"Northport","countrySecondarySubdivision":"Tuscaloosa","countrySubdivision":"AL","countrySubdivisionName":"Alabama","postalCode":"35475","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"1114 Mitt Lary Road, Northport,
+        AL 35475","localName":"Northport"},"position":{"lat":33.30188,"lon":-87.56958},"viewport":{"topLeftPoint":{"lat":33.30278,"lon":-87.57066},"btmRightPoint":{"lat":33.30098,"lon":-87.5685}},"entryPoints":[{"type":"main","position":{"lat":33.30107,"lon":-87.56964}}]}]}'
+  recorded_at: Wed, 31 May 2023 01:12:07 GMT
+- request:
+    method: get
+    uri: https://api.tomtom.com/search/2/nearbySearch/.json?categorySet=7397&country=US&key=app_key&lat=41.729882&lon=-93.608108
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 31 May 2023 02:00:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      Tracking-Id:
+      - 813cd68c-57ee-4c13-9ae5-fbbf5d88b01b
+      Access-Control-Expose-Headers:
+      - Tracking-ID
+      X-Apigee.target-Latency:
+      - '46'
+      X-Envoy-Upstream-Service-Time:
+      - '56'
+      Server:
+      - tomtom
+      X-Tomtom-Processed-By:
+      - westus2
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"summary":{"queryType":"NEARBY","queryTime":43,"numResults":10,"offset":0,"totalResults":100,"fuzzyLevel":1,"geoBias":{"lat":41.729882,"lon":-93.608108},"geobiasCountry":"US"},"results":[{"type":"POI","id":"Z-RKFtZ2STflUw7ZMYg1Nw","score":109.8994286515,"dist":91.431357,"info":"search:ta:840199001798595-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"312","streetName":"Southwest Maple
+        Street","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","extendedPostalCode":"50023-2915","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"312 Southwest Maple Street,
+        Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.729244,"lon":-93.608803},"viewport":{"topLeftPoint":{"lat":41.73014,"lon":-93.61001},"btmRightPoint":{"lat":41.72834,"lon":-93.6076}},"entryPoints":[{"type":"main","position":{"lat":41.72925,"lon":-93.60856}}]},{"type":"POI","id":"LR6m9PxZMsjlGMTdE1yObQ","score":109.3440995074,"dist":596.269236,"info":"search:ta:840199001510407-US","poi":{"name":"Lynk
+        Systems","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"302","streetName":"South Ankeny
+        Boulevard","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","extendedPostalCode":"50023-3127","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"302 South Ankeny Boulevard,
+        Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.729343,"lon":-93.600959},"viewport":{"topLeftPoint":{"lat":41.73024,"lon":-93.60216},"btmRightPoint":{"lat":41.72844,"lon":-93.59975}},"entryPoints":[{"type":"main","position":{"lat":41.72934,"lon":-93.60038}}]},{"type":"POI","id":"yg8vbc_r0He8ngBz0IZ-tQ","score":109.2793106877,"dist":655.177767,"info":"search:ta:840199001507566-US","poi":{"name":"Lynk
+        Systems","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"11655","streetName":"Southwest
+        Ordnance Road","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","extendedPostalCode":"50023-2824","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"11655 Southwest Ordnance
+        Road, Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.724422,"lon":-93.611076},"viewport":{"topLeftPoint":{"lat":41.72532,"lon":-93.61228},"btmRightPoint":{"lat":41.72352,"lon":-93.60987}},"entryPoints":[{"type":"main","position":{"lat":41.72442,"lon":-93.61108}}]},{"type":"POI","id":"32_DBMYeY7cHyR1834LHNQ","score":109.2580529052,"dist":674.494335,"info":"search:ta:840199001543258-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"102","streetName":"North Ankeny
+        Boulevard","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","extendedPostalCode":"50023-1703","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"102 North Ankeny Boulevard,
+        Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.732205,"lon":-93.600599},"viewport":{"topLeftPoint":{"lat":41.7331,"lon":-93.6018},"btmRightPoint":{"lat":41.73131,"lon":-93.59939}},"entryPoints":[{"type":"main","position":{"lat":41.73221,"lon":-93.60044}}]},{"type":"POI","id":"u6rCo-NoTohfmhjP8gXulg","score":109.2253144096,"dist":704.257257,"info":"search:ta:840199001545341-US","poi":{"name":"Metabank","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"127","streetName":"North Ankeny
+        Boulevard","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","extendedPostalCode":"50023-1708","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"127 North Ankeny Boulevard,
+        Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.732153,"lon":-93.600186},"viewport":{"topLeftPoint":{"lat":41.73305,"lon":-93.60139},"btmRightPoint":{"lat":41.73125,"lon":-93.59898}},"entryPoints":[{"type":"main","position":{"lat":41.73215,"lon":-93.60031}}]},{"type":"POI","id":"exaWqz60cktZ7i_MiL6BWg","score":109.2100151844,"dist":718.166166,"info":"search:ta:840199001527494-US","poi":{"name":"Veridian
+        Cu","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"410","streetName":"North Ankeny
+        Boulevard","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","extendedPostalCode":"50023-1703","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"410 North Ankeny Boulevard,
+        Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.734643,"lon":-93.602259},"viewport":{"topLeftPoint":{"lat":41.73602,"lon":-93.60411},"btmRightPoint":{"lat":41.73326,"lon":-93.60041}},"entryPoints":[{"type":"minor","position":{"lat":41.73543,"lon":-93.60187}},{"type":"main","position":{"lat":41.73464,"lon":-93.60041}}]},{"type":"POI","id":"Q2ejyumpXv3OSyq3UljJSQ","score":109.1002938076,"dist":817.925537,"info":"search:ta:840197000037604-US","poi":{"name":"ATM","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.724276,"lon":-93.614489},"viewport":{"topLeftPoint":{"lat":41.72518,"lon":-93.61569},"btmRightPoint":{"lat":41.72338,"lon":-93.61328}},"entryPoints":[{"type":"main","position":{"lat":41.72424,"lon":-93.61449}}]},{"type":"POI","id":"T63hXiYvbdLqY-zuIpbCfw","score":109.0648361957,"dist":850.152045,"info":"search:ta:840199001827751-US","poi":{"name":"ATM","categorySet":[{"id":7397}],"categories":["cash
+        dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"1165","streetName":"Southwest Ordnance
+        Road","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","extendedPostalCode":"50023-2837","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"1165 Southwest Ordnance
+        Road, Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.724108,"lon":-93.614823},"viewport":{"topLeftPoint":{"lat":41.72501,"lon":-93.61603},"btmRightPoint":{"lat":41.72321,"lon":-93.61362}},"entryPoints":[{"type":"main","position":{"lat":41.72441,"lon":-93.61482}}]},{"type":"POI","id":"iwCSkhuDh2S81X2A5q1ilQ","score":109.0588692461,"dist":855.573191,"info":"search:ta:840199001551057-US","poi":{"name":"Veridian
+        Cu","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"414","streetName":"North Ankeny
+        Boulevard","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"414 North Ankeny Boulevard,
+        Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.735214,"lon":-93.600675},"viewport":{"topLeftPoint":{"lat":41.73611,"lon":-93.60188},"btmRightPoint":{"lat":41.73431,"lon":-93.59947}},"entryPoints":[{"type":"main","position":{"lat":41.73519,"lon":-93.6004}}]},{"type":"POI","id":"i1mKenuR0dcSwFF2vue-Kg","score":108.9977562687,"dist":911.134548,"info":"search:ta:840199001517801-US","poi":{"name":"Lynk
+        Systems","categorySet":[{"id":7397}],"categories":["cash dispenser"],"classifications":[{"code":"CASH_DISPENSER","names":[{"nameLocale":"en-US","name":"cash
+        dispenser"}]}]},"address":{"streetNumber":"705","streetName":"South Ankeny
+        Boulevard","municipality":"Ankeny","countrySecondarySubdivision":"Polk","countrySubdivision":"IA","countrySubdivisionName":"Iowa","postalCode":"50023","extendedPostalCode":"50023-3418","countryCode":"US","country":"United
+        States","countryCodeISO3":"USA","freeformAddress":"705 South Ankeny Boulevard,
+        Ankeny, IA 50023","localName":"Ankeny"},"position":{"lat":41.72417,"lon":-93.600236},"viewport":{"topLeftPoint":{"lat":41.72507,"lon":-93.60144},"btmRightPoint":{"lat":41.72327,"lon":-93.59903}},"entryPoints":[{"type":"main","position":{"lat":41.72383,"lon":-93.60042}}]}]}'
+  recorded_at: Wed, 31 May 2023 02:00:06 GMT
+recorded_with: VCR 6.1.0

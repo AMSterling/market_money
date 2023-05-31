@@ -338,6 +338,64 @@ RSpec.describe 'Markets API Endpoints', type: :request do
   end
 
   describe 'nearby cash dispensers' do
-    
+    let!(:market) {
+      Market.create(
+        name: "Uptown Ankeny Farmers Market",
+        street: "Corner of SW 3rd & SW Maple Street",
+        city: "Ankeny",
+        county: "Polk",
+        state: "Iowa",
+        zip: "50023",
+        lat: "41.729882",
+        lon: "-93.608108"
+      ) }
+
+    context 'valid market ID' do
+      it 'fetches nearest atms to a market' do
+
+        get "/api/v0/markets/#{market.id}/nearest_atms"
+
+        expect(response).to be_successful
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        atms = response_body[:data]
+
+        expect(atms).to be_an Array
+        atms.each do |atm|
+          expect(atm).to have_key(:id)
+          expect(atm[:id]).to be_nil
+          expect(atm).to have_key(:type)
+          expect(atm[:type]).to eq('atm')
+          expect(atm).to have_key(:attributes)
+          expect(atm[:attributes]).to be_a Hash
+          expect(atm[:attributes]).to have_key(:name)
+          expect(atm[:attributes][:name]).to be_a String
+          expect(atm[:attributes]).to have_key(:address)
+          expect(atm[:attributes][:address]).to be_a String
+          expect(atm[:attributes]).to have_key(:lat)
+          expect(atm[:attributes][:lat]).to be_a Float
+          expect(atm[:attributes]).to have_key(:lon)
+          expect(atm[:attributes][:lon]).to be_a Float
+          expect(atm[:attributes]).to have_key(:distance)
+          expect(atm[:attributes][:distance]).to be_a Float
+          expect(atm).to_not have_key(:created_at)
+        end
+      end
+    end
+
+    context 'invalid market ID' do
+      it 'responds with 404 when market cannot be found' do
+        id = 123123123123
+
+        get "/api/v0/markets/#{id}/nearest_atms"
+
+        expect(response).to_not be_successful
+        expect(response).to have_http_status 404
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response_body).to eq({:errors=>[{:detail=>"Couldn't find Market with 'id'=123123123123"}]})
+      end
+    end
   end
 end

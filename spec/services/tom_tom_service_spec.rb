@@ -15,6 +15,7 @@ RSpec.describe TomTomService, :vcr do
         expect(result.keys).to include(:dist, :poi, :address, :position)
         expect(result[:dist]).to be_a Float
         expect(result[:poi]).to have_key(:name)
+        expect(result[:poi][:name]).to be_a String
         expect(result[:address]).to have_key(:freeformAddress)
         expect(result[:address][:freeformAddress]).to be_a String
         expect(result[:position].keys).to eq([:lat, :lon])
