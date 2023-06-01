@@ -82,7 +82,7 @@ Market Money is a Backend Service Oriented Architecture application that utilize
 <!-- Architecture -->
 ## Architecture
 
-
+<img width="1089" alt="MarketMoneySchema" src="https://github.com/AMSterling/market_money/assets/103849872/0b13a4f6-30da-4e6c-af28-f415d74349af">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
