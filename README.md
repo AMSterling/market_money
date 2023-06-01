@@ -4,7 +4,7 @@
 
 <div align="right">
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/26f1b36435ef838c9599/maintainability)](https://codeclimate.com/github/AMSterling/market_money/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/684985a686515550ee75/maintainability)](https://codeclimate.com/github/AMSterling/market_money/maintainability)
 
 </div>
 
