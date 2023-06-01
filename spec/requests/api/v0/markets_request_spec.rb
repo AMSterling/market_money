@@ -13,7 +13,7 @@ RSpec.describe 'Markets API Endpoints', type: :request do
   let!(:vendor6) { m3_vendors[2].vendor }
   let!(:vendor7) { create(:vendor) }
 
-  describe 'market CRUD' do
+  describe 'MarketsController' do
     it 'fetches all markets' do
 
       get '/api/v0/markets'
@@ -105,7 +105,7 @@ RSpec.describe 'Markets API Endpoints', type: :request do
     end
   end
 
-  describe 'market vendors' do
+  describe 'Markets::VendorsController' do
     it 'fetches vendors associated with a market' do
       id = markets[0].id
 
@@ -195,7 +195,7 @@ RSpec.describe 'Markets API Endpoints', type: :request do
     end
   end
 
-  describe 'market search' do
+  describe 'Markets::SearchController' do
     let!(:market1) { markets[0] }
 
     context 'when valid parameters' do
@@ -309,6 +309,10 @@ RSpec.describe 'Markets API Endpoints', type: :request do
 
         expect(response).to_not be_successful
         expect(response).to have_http_status 422
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response_body).to eq({:error=>'Invalid Parameters'})
       end
 
       it 'responds with 422 if name and city' do
@@ -317,6 +321,10 @@ RSpec.describe 'Markets API Endpoints', type: :request do
 
         expect(response).to_not be_successful
         expect(response).to have_http_status 422
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response_body).to eq({:error=>'Invalid Parameters'})
       end
 
       it 'responds with 422 if wrong param type passed' do
@@ -325,6 +333,10 @@ RSpec.describe 'Markets API Endpoints', type: :request do
 
         expect(response).to_not be_successful
         expect(response).to have_http_status 422
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response_body).to eq({:error=>'Invalid Parameters'})
       end
 
       it 'responds with 422 if param not attribute for market' do
@@ -333,6 +345,10 @@ RSpec.describe 'Markets API Endpoints', type: :request do
 
         expect(response).to_not be_successful
         expect(response).to have_http_status 422
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response_body).to eq({:error=>'Invalid Parameters'})
       end
     end
   end

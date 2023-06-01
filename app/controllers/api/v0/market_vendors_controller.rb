@@ -18,10 +18,10 @@ class Api::V0::MarketVendorsController < ApplicationController
   end
 
   def destroy
-    if mv_finder.exists?
-      mv_finder.first.destroy
-    else
+    if !mv_finder.exists?
       render json: { errors: [{ detail: "No MarketVendor with market_id=#{params[:market_vendor][:market_id]} AND vendor_id=#{params[:market_vendor][:vendor_id]} exists" }] }, status: :not_found
+    else
+      mv_finder.first.destroy
     end
   end
 

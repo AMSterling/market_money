@@ -62,7 +62,6 @@ RSpec.describe 'MarketVendors API endpoints', type: :request do
       delete '/api/v0/market_vendors', headers: headers, params: JSON.generate(market_vendor: params_for_removal)
 
       expect(response).to have_http_status(204)
-      require "pry"; binding.pry
       expect(markets[0].vendors.count).to eq(2)
       expect { MarketVendor.find(created_mv.id) }.to raise_error(ActiveRecord::RecordNotFound)
     end
