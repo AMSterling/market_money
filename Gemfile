@@ -39,14 +39,13 @@ gem 'faraday'
 gem 'figaro'
 gem 'jsonapi-serializer'
 gem 'multi_json'
-gem 'simplecov-small-badge', :require => false
-gem 'repo-small-badge', :require => false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry'
   gem 'rspec-rails'
+  gem 'simplecov_badger'
 end
 
 group :development do

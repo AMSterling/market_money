@@ -14,20 +14,15 @@
 #
 require 'webmock/rspec'
 require 'simplecov' # open coverage/index.html
-require 'simplecov_small_badge'
+require "simplecov_badger"
 SimpleCov.start 'rails' do
   add_filter %w[config channels jobs mailers]
-  SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
-    SimpleCov::Formatter::HTMLFormatter,
-    SimpleCovSmallBadge::Formatter
-  ])
-end
-
-SimpleCovSmallBadge.configure do |config|
-  # does not created rounded borders
-  config.rounded_border = true
-  # set the background for the title to darkgrey
-  config.background = '#ffffcc'
+  SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
+    [
+      SimpleCov::Formatter::HTMLFormatter,
+      SimpleCov::Badger::Formatter # <-- this one
+    ]
+  )
 end
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

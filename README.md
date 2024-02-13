@@ -5,7 +5,7 @@
 <div align="right">
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/26f1b36435ef838c9599/maintainability)](https://codeclimate.com/github/AMSterling/market_money/maintainability)
-![Coverage](https://marcgrimme.github.io/simplecov-small-badge/badges/coverage_badge_total.png)
+![SimpleCov coverage](https://coverage.traels.it/badges/some_base_64_encoded_string)
 
 </div>
 
@@ -1181,8 +1181,6 @@ Project Link: [https://github.com/AMSterling/market_money](https://github.com/AM
 
 [CodeClimate]: https://a11ybadges.com/badge?style=for-the-badge&logo=codeclimate
 [CodeClimate-url]: https://codeclimate.com
-
-[Coverage]: https://marcgrimme.github.io/simplecov-small-badge/badges/coverage_badge_total.png
 
 [CircleCI]: https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white
 [CircleCI-url]: https://circleci.com/developer

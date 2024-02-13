@@ -32,3 +32,4 @@
 
 # Ignore application configuration
 /config/application.yml
+.simplecov_badger_auth_token
