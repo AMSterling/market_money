@@ -246,6 +246,7 @@ DEPENDENCIES
   pry
   puma (~> 3.12.6)
   rails (~> 7.0.4, >= 7.0.4.1)
+  repo-small-badge
   rspec-rails
   shoulda-matchers
   simplecov

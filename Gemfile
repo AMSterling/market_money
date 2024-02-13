@@ -40,6 +40,7 @@ gem 'figaro'
 gem 'jsonapi-serializer'
 gem 'multi_json'
 gem 'simplecov-small-badge', :require => false
+gem 'repo-small-badge', :require => false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
