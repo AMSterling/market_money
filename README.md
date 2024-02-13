@@ -5,7 +5,7 @@
 <div align="right">
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/26f1b36435ef838c9599/maintainability)](https://codeclimate.com/github/AMSterling/market_money/maintainability)
-![SimpleCov coverage](https://coverage.traels.it/badges/Z2l0QGdpdGh1Yi5jb206QU1TdGVybGluZy9tYXJrZXRfbW9uZXkuZ2l0)
+<!-- ![SimpleCov coverage](https://coverage.traels.it/badges/Z2l0QGdpdGh1Yi5jb206QU1TdGVybGluZy9tYXJrZXRfbW9uZXkuZ2l0) -->
 
 </div>
 
