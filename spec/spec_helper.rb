@@ -14,8 +14,14 @@
 #
 require 'webmock/rspec'
 require 'simplecov' # open coverage/index.html
-SimpleCov.start 'rails'
-SimpleCov.add_filter %w[config channels jobs mailers]
+require 'simplecov_small_badge'
+SimpleCov.start 'rails' do
+  add_filter %w[config channels jobs mailers]
+  SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
+    SimpleCov::Formatter::HTMLFormatter,
+    SimpleCovSmallBadge::Formatter
+  ])
+end
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

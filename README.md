@@ -5,6 +5,7 @@
 <div align="right">
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/26f1b36435ef838c9599/maintainability)](https://codeclimate.com/github/AMSterling/market_money/maintainability)
+![Coverage](https://marcgrimme.github.io/simplecov-small-badge/badges/coverage_badge_total.png)
 
 </div>
 
@@ -155,6 +156,12 @@ To run the test suite:
 
 ```sh
 bundle exec rspec
+```
+
+To view test coverage:
+
+```sh
+open coverage/index.html
 ```
 
 Push to your preferred production server or in your terminal run
@@ -1174,6 +1181,11 @@ Project Link: [https://github.com/AMSterling/market_money](https://github.com/AM
 
 [Capybara]: https://custom-icon-badges.demolab.com/badge/Capybara-F7F4EF?style=for-the-badge&logo=capybara
 [Capybara-url]: https://www.patreon.com/capybara
+
+[CodeClimate]: https://a11ybadges.com/badge?style=for-the-badge&logo=codeclimate
+[CodeClimate-url]: https://codeclimate.com
+
+[Coverage]: https://marcgrimme.github.io/simplecov-small-badge/badges/coverage_badge_total.png
 
 [CircleCI]: https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white
 [CircleCI-url]: https://circleci.com/developer
