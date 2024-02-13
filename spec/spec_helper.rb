@@ -22,6 +22,13 @@ SimpleCov.start 'rails' do
     SimpleCovSmallBadge::Formatter
   ])
 end
+
+SimpleCovSmallBadge.configure do |config|
+  # does not created rounded borders
+  config.rounded_border = true
+  # set the background for the title to darkgrey
+  config.background = '#ffffcc'
+end
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
