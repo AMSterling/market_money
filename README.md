@@ -92,22 +92,19 @@ Market Money is a Backend Service Oriented Architecture application that utilize
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
 Ruby:
   ```sh
-  rbenv install 3.1.1
+  3.1.1
   ```
 Rails:
   ```sh
-  gem install rails --version 7.0.4
+  7.0.4
+  ```
+Database:
+  ```sh
+  postgresql@14
   ```
 
-PostgreSQL@14<a href="https://www.postgresql.org/download/" target="_blank" rel="noopener noreferrer">(Windows)</a> or if using Homebrew:
-  ```sh
-  brew install postgresql
-  brew services start postgresql
-  ```
 API Keys:
 Market Money uses <a href="https://developer.tomtom.com/" target="_blank" rel="noopener noreferrer">TomTom API</a>
 
