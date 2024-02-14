@@ -18,7 +18,7 @@
 
 # Market Money
 
-[![Rails][Rails]][Rails-url] [![Ruby][Ruby]][Ruby-url] [![RSpec][RSpec]][RSpec-url] [![Atom][Atom]][Atom-url] [![PostgreSQL][PostgreSQL]][PostgreSQL-url] [![Postman][Postman]][Postman-url]
+[![Rails][Rails]][Rails-url] [![Ruby][Ruby]][Ruby-url] [![RSpec][RSpec]][RSpec-url] [![Atom][Atom]][Atom-url] [![PostgreSQL][PostgreSQL]][PostgreSQL-url] [![Postman][Postman]][Postman-url] [![CodeClimate][CodeClimate]][CodeClimate-url]
 
 </div>
 
@@ -1170,7 +1170,7 @@ Project Link: [https://github.com/AMSterling/market_money](https://github.com/AM
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/sterling-316a6223a/
 
-[Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
+[Atom]: https://custom-icon-badges.demolab.com/badge/Atom-5FB57D?style=for-the-badge&logo=atom
 [Atom-url]: https://github.com/atom/atom/releases/tag/v1.60.0
 
 [Bootstrap]: https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white
@@ -1179,7 +1179,7 @@ Project Link: [https://github.com/AMSterling/market_money](https://github.com/AM
 [Capybara]: https://custom-icon-badges.demolab.com/badge/Capybara-F7F4EF?style=for-the-badge&logo=capybara
 [Capybara-url]: https://www.patreon.com/capybara
 
-[CodeClimate]: https://a11ybadges.com/badge?style=for-the-badge&logo=codeclimate
+[CodeClimate]: https://img.shields.io/badge/Code%20Climate-000?style=for-the-badge&logo=codeclimate&logoColor=fff
 [CodeClimate-url]: https://codeclimate.com
 
 [CircleCI]: https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white
